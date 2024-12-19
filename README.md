@@ -2,7 +2,7 @@
 
 Exploring what a `<field-error>` element might look like.
 
-## Exploration: set invalid on load
+## [Exploration: set invalid on load](https://knowler.github.io/field-error-element/explorations/set-invalid-on-load/)
 
 This strategy sets the form control as invalid with a custom error message on
 load. The error message needs to be custom as that’s all we can set for built-in
