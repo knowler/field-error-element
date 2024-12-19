@@ -13,3 +13,8 @@ Also, in the current implementation this will always report the validation when
 focusing the element until it receives input at which time the custom error is
 cleared (i.e. since that processing lives on the server). This likely is
 annoying.
+
+Some nice benefits here is that using the constraint validation API
+automatically causes the element to receive the correct implicit ARIA values. Of
+course, this doesn’t work without JS, but that’s besides the point of this
+exploration.
