@@ -1,0 +1,22 @@
+<!doctype html>
+<meta charset=utf-8>
+<meta name=color-scheme content="dark light">
+<meta name=viewport content=width=device-width,initial-scale=1>
+<title><field-error> element</title>
+<!--<script type=module src=https://esm.sh/gh/knowler/log-form-element/log-form-element.js?raw&define blocking=render></script>-->
+<script type=module src=/field-error-element.js?define blocking=render></script>
+<style>
+:root {
+	font-family: system-ui, sans-serif;
+}
+</style>
+<log-form>
+	<form>
+		<div>
+			<label for=fruit>Fruit</label>
+			<field-error for=fruit>Rotten</field-error>
+			<input id=fruit name=fruit value=Apple required>
+		</div>
+		<button>Submit</button>
+	</form>
+</log-form>

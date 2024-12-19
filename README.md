@@ -1,39 +1,15 @@
-# Field Error Element
+# `<field-error>`
 
-A custom element that associates itself with a field and displays
-constraint violations when they are reported.
+Exploring what a `<field-error>` element might look like.
 
-## Usage
+## Exploration: set invalid on load
 
-You can define the custom element the standard way or use it’s static
-`define()` method which will define it and add the class to the `window`
-object.
+This strategy sets the form control as invalid with a custom error message on
+load. The error message needs to be custom as that’s all we can set for built-in
+elements, however, we could set non-custom constraint validation errors for
+custom elements. I might explore that in the future.
 
-```javascript
-import { FieldErrorElement } from "https://esm.sh/gh/knowler/field-error-element/field-error-element.js?raw";
-
-FieldErrorElement.define();
-```
-
-```html
-<form>
-	<div>
-		<label for="website">Website</label>
-		<field-error for="website"></field-error>
-		<input type="url" id="website" name="website">
-	</div>
-	<button>Submit</button>
-</form>
-```
-
-```html
-<form>
-	<div>
-		<label for="website">Website</label>
-		<field-error for="website" typeMismatch="Enter a valid URL (including the protocol)">
-		</field-error>
-		<input type="url" id="website" name="website">
-	</div>
-	<button>Submit</button>
-</form>
-```
+Also, in the current implementation this will always report the validation when
+focusing the element until it receives input at which time the custom error is
+cleared (i.e. since that processing lives on the server). This likely is
+annoying.
